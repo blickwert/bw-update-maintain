@@ -42,10 +42,10 @@ class BW_Update_Maintain {
         // Send email to appropriate recipient based on status
         if ($status === 'error') {
             $email['to'] = self::$error_mail;
-        } elseif ($status === 'success') {
-            $email['to'] = self::$success_mail;
-        } else {
+        } elseif ($status === 'warning') {
             $email['to'] = self::$warning_mail;
+        } else {
+            $email['to'] = self::$success_mail;
         }
 
         return $email;
